@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Friday Plan - Duo Queue Edition</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: url('https://images4.alphacoders.com/133/1339034.jpeg') no-repeat center center fixed;
+      background-size: cover;
+      color: #f0f0f0;
+      text-shadow: 1px 1px 2px #000;
+    }
+
+    .overlay {
+      background: rgba(0, 0, 0, 0.75);
+      min-height: 100vh;
+      padding: 2rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      text-align: center;
+      margin-bottom: 2rem;
+      color: #f9d342;
+    }
+
+    .event-box {
+      max-width: 600px;
+      width: 90%;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 16px;
+      padding: 1.5rem;
+      margin-bottom: 1rem;
+      display: none;
+      transition: all 0.3s ease;
+      backdrop-filter: blur(8px);
+    }
+
+    .time {
+      font-weight: bold;
+      font-size: 1.1rem;
+      color: #fce77d;
+    }
+
+    .desc {
+      font-size: 1rem;
+      margin-top: 0.5rem;
+    }
+
+    button {
+      margin-top: 2rem;
+      padding: 0.8rem 1.6rem;
+      background: #fce77d;
+      color: #111;
+      font-weight: bold;
+      border: none;
+      border-radius: 12px;
+      cursor: pointer;
+      transition: background 0.2s ease;
+    }
+
+    button:hover {
+      background: #ffdf58;
+    }
+
+    footer {
+      margin-top: 3rem;
+      text-align: center;
+      font-size: 0.85rem;
+      color: #ccc;
+    }
+
+  </style>
+</head>
+<body>
+  <div class="overlay">
+    <h1>🗓️ Friday Plan</h1>
+
+    <div class="event-box"><div class="time">6:00 AM - 7:00 AM</div><div class="desc">🌅 Wake up</div></div>
+    <div class="event-box"><div class="time">7:00 AM - 2:00 PM</div><div class="desc">📚 Pookie at Uni</div></div>
+    <div class="event-box"><div class="time">7:00 AM - 4:00 PM</div><div class="desc">👩‍🏫 Fabi in class</div></div>
+    <div class="event-box"><div class="time">4:00 PM - 4:30 PM</div><div class="desc">🧼 Get ready to go out</div></div>
+    <div class="event-box"><div class="time">4:30 PM - 5:10 PM</div><div class="desc">🚇 Take M1 from Kato Patisia → Omonia, switch to M2 → Aghios Ioannis</div></div>
+    <div class="event-box"><div class="time">5:10 PM - 6:10 PM</div><div class="desc">🍔 Dinner at Big Nick – burgers!</div></div>
+    <div class="event-box"><div class="time">6:10 PM - 6:25 PM</div><div class="desc">🚇 Take M2 two stations further → Aghios Dimitrios</div></div>
+    <div class="event-box"><div class="time">6:25 PM - ???</div><div class="desc">🎮 League DuoQ at Battlenet Station (Reach Master!)</div></div>
+    <div class="event-box"><div class="time">??? - ???</div><div class="desc">🍰 Optional dessert nearby (in the area?)</div></div>
+    <div class="event-box"><div class="desc">🔥 Hopefully here you are full and master! 🎉</div></div>
+
+    <button onclick="showNext()">Reveal Next Step</button>
+
+    <footer>Theme: Friday Date Day 🚀</footer>
+  </div>
+
+  <script>
+    let current = 0;
+    const events = document.querySelectorAll('.event-box');
+
+    function showNext() {
+      if (current < events.length) {
+        events[current].style.display = 'block';
+        events[current].scrollIntoView({ behavior: 'smooth', block: 'center' });
+        current++;
+        if (current === events.length) {
+          document.querySelector('button').style.display = 'none';
+        }
+      }
+    }
+  </script>
+</body>
+</html>
